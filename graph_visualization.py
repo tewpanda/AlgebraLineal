@@ -26,6 +26,5 @@ def draw_social_graph(personas, conexiones, influencers, filename='grafo.png', l
         font_size=12, font_weight='bold', edge_color='gray', linewidths=2, arrows=True, arrowstyle='-|>', arrowsize=25
     )
     plt.title(f'Red Social e Influencers ({layout})', fontsize=16)
-    # plt.tight_layout()  # Comentado para evitar la advertencia
     plt.savefig(filename)
     plt.close()
