@@ -8,13 +8,14 @@ personas = [
     'Diego', 'Valeria', 'Tomás', 'Paula', 'Andrés'
 ]
 conexiones = [
-    ('Ana', 'Luis'), ('Ana', 'Juan'), ('Luis', 'Sofía'), ('Juan', 'Pedro'),
-    ('Sofía', 'Pedro'), ('Luis', 'Pedro'), ('Marta', 'Carlos'), ('Carlos', 'Elena'),
-    ('Elena', 'Raúl'), ('Raúl', 'Lucía'), ('Lucía', 'Diego'), ('Diego', 'Valeria'),
-    ('Valeria', 'Tomás'), ('Tomás', 'Paula'), ('Paula', 'Andrés'), ('Andrés', 'Ana'),
-    ('Marta', 'Ana'), ('Carlos', 'Luis'), ('Elena', 'Juan'), ('Raúl', 'Sofía'),
-    ('Lucía', 'Pedro'), ('Diego', 'Marta'), ('Valeria', 'Carlos'), ('Tomás', 'Elena'),
-    ('Paula', 'Raúl'), ('Andrés', 'Lucía')
+    ('Ana', 'Luis'), ('Ana', 'Juan'), ('Ana', 'Pedro'),
+    ('Luis', 'Sofía'), ('Juan', 'Pedro'), ('Pedro', 'Marta'),
+    ('Marta', 'Carlos'), ('Carlos', 'Elena'), ('Elena', 'Raúl'),
+    ('Raúl', 'Lucía'), ('Lucía', 'Diego'), ('Diego', 'Valeria'),
+    ('Valeria', 'Tomás'), ('Tomás', 'Paula'), ('Paula', 'Andrés'),
+    ('Andrés', 'Ana'), ('Carlos', 'Luis'), ('Elena', 'Juan'),
+    ('Raúl', 'Sofía'), ('Lucía', 'Pedro'), ('Valeria', 'Carlos'),
+    ('Tomás', 'Elena'), ('Paula', 'Raúl'), ('Andrés', 'Lucía')
 ]
 
 # Análisis de la red
@@ -30,8 +31,6 @@ with open('informe.txt', 'w', encoding='utf-8') as f:
 
 print('Informe generado: informe.txt')
 
-# Generar grafo en imagen
-salida_imagen = 'grafo.png'
-draw_social_graph(personas, conexiones, influencers, filename=salida_imagen)
+draw_social_graph(personas, conexiones, influencers, filename='grafo.png', layout='kamada_kawai')
 
-print(f'Grafo generado: {salida_imagen}')
+print('Se generó la imagen: grafo.png')
