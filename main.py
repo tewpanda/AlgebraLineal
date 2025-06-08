@@ -1,6 +1,7 @@
 from network_analysis import NetworkAnalysis
 from report import generate_report
 from graph_visualization import draw_social_graph
+import numpy as np
 
 # Ejemplo de input: puedes modificar estos datos
 personas = [
@@ -21,6 +22,9 @@ conexiones = [
 # Análisis de la red
 red = NetworkAnalysis(personas, conexiones)
 valores, vectores = red.eigen_analysis()
+valores = np.round(valores, 6)  # Redondear los autovalores
+
+diagonal = np.diag(valores)
 influencers = red.find_influencers(top_n=3)
 
 # Generar informe
@@ -31,6 +35,6 @@ with open('informe.txt', 'w', encoding='utf-8') as f:
 
 print('Informe generado: informe.txt')
 
-draw_social_graph(personas, conexiones, influencers, filename='grafo.png', layout='kamada_kawai')
+draw_social_graph(personas, conexiones, influencers, filename='grafo.png', layout='kamada_kawai', adj_matrix=red.adj_matrix, laplacian=red.laplacian, diagonal=diagonal)
 
 print('Se generó la imagen: grafo.png')
