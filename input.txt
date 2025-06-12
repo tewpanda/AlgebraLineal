@@ -1,0 +1,5 @@
+# personas
+['Ana', 'Luis', 'Juan', 'Sofía', 'Pedro', 'Marta', 'Carlos', 'Elena', 'Raúl', 'Lucía', 'Diego', 'Valeria', 'Tomás', 'Paula', 'Andrés']
+
+# conexiones
+[('Ana', 'Luis'), ('Ana', 'Juan'), ('Ana', 'Pedro'), ('Luis', 'Sofía'), ('Juan', 'Pedro'), ('Pedro', 'Marta'), ('Marta', 'Carlos'), ('Carlos', 'Elena'), ('Elena', 'Raúl'), ('Raúl', 'Lucía'), ('Lucía', 'Diego'), ('Diego', 'Valeria'), ('Valeria', 'Tomás'), ('Tomás', 'Paula'), ('Paula', 'Andrés'), ('Andrés', 'Ana'), ('Carlos', 'Luis'), ('Elena', 'Juan'), ('Raúl', 'Sofía'), ('Lucía', 'Pedro'), ('Valeria', 'Carlos'), ('Tomás', 'Elena'), ('Paula', 'Raúl'), ('Andrés', 'Lucía')]

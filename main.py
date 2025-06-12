@@ -3,27 +3,14 @@ from report import generate_report
 from graph_visualization import draw_social_graph
 import numpy as np
 
-# Ejemplo de input: puedes modificar estos datos
-personas = [
-    'Ana', 'Luis', 'Juan', 'Sofía', 'Pedro', 'Marta', 'Carlos', 'Elena', 'Raúl', 'Lucía',
-    'Diego', 'Valeria', 'Tomás', 'Paula', 'Andrés'
-]
-conexiones = [
-    ('Ana', 'Luis'), ('Ana', 'Juan'), ('Ana', 'Pedro'),
-    ('Luis', 'Sofía'), ('Juan', 'Pedro'), ('Pedro', 'Marta'),
-    ('Marta', 'Carlos'), ('Carlos', 'Elena'), ('Elena', 'Raúl'),
-    ('Raúl', 'Lucía'), ('Lucía', 'Diego'), ('Diego', 'Valeria'),
-    ('Valeria', 'Tomás'), ('Tomás', 'Paula'), ('Paula', 'Andrés'),
-    ('Andrés', 'Ana'), ('Carlos', 'Luis'), ('Elena', 'Juan'),
-    ('Raúl', 'Sofía'), ('Lucía', 'Pedro'), ('Valeria', 'Carlos'),
-    ('Tomás', 'Elena'), ('Paula', 'Raúl'), ('Andrés', 'Lucía')
-]
+# Solicitar input desde la terminal (solo la lista de personas y la lista de conexiones)
+personas = eval(input('Pega la lista de personas (ejemplo: ["Ana", "Luis", ...]):\n'))
+conexiones = eval(input('Pega la lista de conexiones (ejemplo: [("Ana", "Luis"), ("Ana", "Juan"), ...]):\n'))
 
 # Análisis de la red
 red = NetworkAnalysis(personas, conexiones)
 valores, vectores = red.eigen_analysis()
 valores = np.round(valores, 6)  # Redondear los autovalores
-
 diagonal = np.diag(valores)
 influencers = red.find_influencers(top_n=3)
 
